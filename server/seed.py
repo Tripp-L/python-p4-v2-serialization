@@ -9,7 +9,7 @@ from models import db, Pet
 with app.app_context():
 
     # Create and initialize a faker generator
-    fake = Faker()
+    fake = Faker() #generates fake data for sample
 
     # Delete all rows in the "pets" table
     Pet.query.delete()
@@ -17,10 +17,10 @@ with app.app_context():
     # Create an empty list
     pets = []
 
-    species = ['Dog', 'Cat', 'Chicken', 'Hamster', 'Turtle']
+    species = ['Dog', 'Cat', 'Chicken', 'Hamster', 'Turtle', 'Gator', 'Snake', 'fish']
 
     # Add some Pet instances to the list
-    for n in range(10):
+    for n in range(200):
         pet = Pet(name=fake.first_name(), species=rc(species))
         pets.append(pet)
 
